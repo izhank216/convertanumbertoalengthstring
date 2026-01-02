@@ -41,7 +41,11 @@ jobs:
         run: gradle javaJar
 
       - name: Build Kotlin/Android JAR
-        run: ./gradlew kotlinAndroidJar
+        run: |
+           chmod +x gradlew
+           ./gradlew kotlinAndroidJar     
+        
+        
 
       - name: Create GitHub Release
         id: create_release
