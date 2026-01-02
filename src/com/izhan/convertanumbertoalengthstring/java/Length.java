@@ -18,7 +18,12 @@ public class Length {
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return value + " " + unit;
     }
+
+    public java.lang.String toCustomString() {
+        return String.fromLength(this);
+    }
 }
+
