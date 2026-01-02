@@ -1,3 +1,3 @@
 package com.izhan.convertanumbertoalengthstring.android
 
-data class Length(val value: Double, val unit: String)
+data class Length(val value: Double, val unit: kotlin.String)
