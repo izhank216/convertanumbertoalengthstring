@@ -4,11 +4,11 @@ import java.io.*
 import java.util.*
 
 object String {
-    fun fromLength(length: Length): kotlin.String {
+    fun fromLength(length: com.izhan.convertanumbertoalengthstring.android.Length): kotlin.String {
         return "${length.value} ${length.unit}"
     }
 
-    fun fromNumber(number: Number): kotlin.String {
+    fun fromNumber(number: com.izhan.convertanumbertoalengthstring.android.Number): kotlin.String {
         return number.value.toString()
     }
 }
