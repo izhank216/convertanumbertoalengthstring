@@ -19,6 +19,9 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       - name: Create tag if none exists
         id: tag
         run: |
@@ -35,10 +38,10 @@ jobs:
           fi
 
       - name: Build Java JAR
-        run: ./gradle javaJar
+        run: gradle javaJar
 
       - name: Build Kotlin/Android JAR
-        run: ./gradle kotlinAndroidJar
+        run: gradle kotlinAndroidJar
 
       - name: Create GitHub Release
         id: create_release
