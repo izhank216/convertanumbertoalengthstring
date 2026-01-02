@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.izhan'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.register('javaJar', Jar) {
+    archiveBaseName.set('convertanumbertoalengthstring')
+    archiveVersion.set(version)
+    from sourceSets.main.allJava
+}
