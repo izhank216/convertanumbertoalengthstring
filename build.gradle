@@ -10,11 +10,23 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/com/izhan/convertanumbertoalengthstring']
+        }
+        kotlin {
+            srcDirs = ['src/com/izhan/convertanumbertoalengthstring/android']
+        }
+    }
+}
+
 tasks.register('javaJar', Jar) {
     dependsOn classes
     archiveBaseName = 'convertanumbertoalengthstring'
     archiveVersion = version
-    from sourceSets.main.allJava
+    from sourceSets.main.output
+    from sourceSets.main.java
 }
 
 tasks.register('kotlinAndroidJar', Jar) {
