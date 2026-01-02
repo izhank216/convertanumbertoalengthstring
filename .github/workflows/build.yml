@@ -35,10 +35,10 @@ jobs:
           fi
 
       - name: Build Java JAR
-        run: ./gradlew javaJar
+        run: ./gradle javaJar
 
       - name: Build Kotlin/Android JAR
-        run: ./gradlew kotlinAndroidJar
+        run: ./gradle kotlinAndroidJar
 
       - name: Create GitHub Release
         id: create_release
