@@ -13,10 +13,10 @@ repositories {
 sourceSets {
     main {
         java {
-            srcDirs = ['src/com/izhan/convertanumbertoalengthstring']
+            srcDirs = ['src/com/izhan/convertanumbertoalengthstring/java']
         }
         kotlin {
-            srcDirs = ['src/com/izhan/convertanumbertoalengthstring/android']
+            srcDirs = ['src/com/izhan/convertanumbertoalengthstring/kotlin']
         }
     }
 }
@@ -25,12 +25,18 @@ tasks.register('javaJar', Jar) {
     dependsOn 'classes'
     archiveBaseName.set('convertanumbertoalengthstring')
     archiveVersion.set(version)
-    from sourceSets.main.java.outputDir
+    from(sourceSets.main.output.classesDirs) {
+        include '**/*.class'
+        includeEmptyDirs = false
+    }
 }
 
 tasks.register('kotlinAndroidJar', Jar) {
     dependsOn 'compileKotlin'
     archiveBaseName.set('convertanumbertoalengthstring-kotlin-android')
     archiveVersion.set(version)
-    from sourceSets.main.kotlin.outputDir
+    from(sourceSets.main.output.classesDirs) {
+        include '**/*.class'
+        includeEmptyDirs = false
+    }
 }
