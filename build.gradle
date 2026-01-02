@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
 }
 
 group = 'com.izhan'
@@ -10,7 +11,15 @@ repositories {
 }
 
 tasks.register('javaJar', Jar) {
-    archiveBaseName.set('convertanumbertoalengthstring')
-    archiveVersion.set(version)
+    dependsOn classes
+    archiveBaseName = 'convertanumbertoalengthstring'
+    archiveVersion = version
     from sourceSets.main.allJava
+}
+
+tasks.register('kotlinAndroidJar', Jar) {
+    dependsOn classes
+    archiveBaseName = 'convertanumbertoalengthstring-kotlin-android'
+    archiveVersion = version
+    from sourceSets.main.output
 }
