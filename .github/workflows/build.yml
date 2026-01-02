@@ -41,10 +41,7 @@ jobs:
         run: gradle javaJar
 
       - name: Build Kotlin/Android JAR
-        run: |
-           chmod +x gradlew
-           gradle wrapper
-           ./gradlew kotlinAndroidJar     
+        run: gradle kotlinAndroidJar
         
         
 
