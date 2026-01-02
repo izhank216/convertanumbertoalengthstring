@@ -8,4 +8,12 @@ public class Convert {
     public static Length numberToLength(Number number, String unit) {
         return new Length(number.getValue(), unit);
     }
+
+    public static java.lang.String lengthToString(Length length) {
+        return String.fromLength(length);
+    }
+
+    public static java.lang.String numberToString(Number number) {
+        return String.fromNumber(number);
+    }
 }
