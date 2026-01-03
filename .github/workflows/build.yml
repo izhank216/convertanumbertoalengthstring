@@ -16,11 +16,12 @@ jobs:
             clean: true
 
       - name: Check src folder
-      - run: |
-          ls src
-          ls src/com/izhan/convertanumbertoalengthstring/
-          ls src/com/izhan/convertanumbertoalengthstring/java
-          ls src/com/izhan/convertanumbertoalengthstring/kotlin
+        run: |
+              ls src
+              ls src/com/izhan/convertanumbertoalengthstring/
+              ls src/com/izhan/convertanumbertoalengthstring/java
+              ls src/com/izhan/convertanumbertoalengthstring/kotlin
+        shell: sh
 
 
       - name: Set up JDK
