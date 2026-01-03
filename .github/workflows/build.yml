@@ -15,6 +15,14 @@ jobs:
         with:
             clean: true
 
+      - name: Check src folder
+      - run: |
+          ls src
+          ls src/com/izhan/convertanumbertoalengthstring/
+          ls src/com/izhan/convertanumbertoalengthstring/java
+          ls src/com/izhan/convertanumbertoalengthstring/kotlin
+
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
