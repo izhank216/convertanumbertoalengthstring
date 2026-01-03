@@ -25,10 +25,6 @@ jobs:
       - name: Check Gradle Version
         run: gradle --version
 
-      - name: Delete Gradle Cache And Build Folder
-        run: |
-             rm -rf .gradle
-             rm -rf build
 
 
       - name: Create tag if none exists
@@ -47,10 +43,10 @@ jobs:
           fi
 
       - name: Build Java JAR
-        run: gradle clean javaJar --no-build-cache --rerun-tasks
+        run: gradle clean javaJar --no-build-cache 
 
       - name: Build Kotlin/Android JAR
-        run: gradle clean kotlinAndroidJar --no-build-cache --rerun-tasks
+        run: gradle clean kotlinAndroidJar --no-build-cache 
         
         
 
@@ -81,6 +77,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/libs/convertanumbertoalengthstring-kotlin-android-1.1.jar
+          asset_path: ./build/libs/convertanumbertoalengthstring-kotlin-android-1.2.jar
           asset_name: convertanumbertoalengthstring-kotlin-android-1.1.jar
           asset_content_type: application/java-archive
