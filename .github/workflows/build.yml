@@ -25,6 +25,11 @@ jobs:
       - name: Check Gradle Version
         run: gradle --version
 
+      - name: Delete Gradle Cache And Build Folder
+        run: |
+             rm -rf .gradle
+             rm -rf build
+
 
       - name: Create tag if none exists
         id: tag
