@@ -5,7 +5,7 @@ public class Convert {
         return new Length(number.getValue(), "m");
     }
 
-    public static Length numberToLength(Number number, String unit) {
+    public static Length numberToLength(Number number, java.lang.String unit) {
         return new Length(number.getValue(), unit);
     }
 
