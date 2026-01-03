@@ -2,9 +2,9 @@ package com.izhan.convertanumbertoalengthstring;
 
 public class Length {
     private double value;
-    private String unit;
+    private java.lang.String unit;
 
-    public Length(double value, String unit) {
+    public Length(double value, java.lang.String unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -13,7 +13,7 @@ public class Length {
         return value;
     }
 
-    public String getUnit() {
+    public java.lang.String getUnit() {
         return unit;
     }
 
@@ -23,7 +23,6 @@ public class Length {
     }
 
     public java.lang.String toCustomString() {
-        return String.fromLength(this);
+        return com.izhan.convertanumbertoalengthstring.String.fromLength(this);
     }
 }
-
