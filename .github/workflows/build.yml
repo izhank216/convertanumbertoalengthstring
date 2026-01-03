@@ -43,10 +43,10 @@ jobs:
           fi
 
       - name: Build Java JAR
-        run: gradle javaJar
+        run: gradle clean javaJar --no-build-cache --rerun-tasks
 
       - name: Build Kotlin/Android JAR
-        run: gradle kotlinAndroidJar
+        run: gradle clean kotlinAndroidJar --no-build-cache --rerun-tasks
         
         
 
@@ -77,6 +77,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/libs/convertanumbertoalengthstring-kotlin-android-1.2.jar
+          asset_path: ./build/libs/convertanumbertoalengthstring-kotlin-android-1.1.jar
           asset_name: convertanumbertoalengthstring-kotlin-android-1.1.jar
           asset_content_type: application/java-archive
