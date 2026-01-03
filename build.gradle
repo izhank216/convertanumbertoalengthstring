@@ -21,22 +21,22 @@ sourceSets {
     }
 }
 
+
 tasks.register('javaJar', Jar) {
     dependsOn 'classes'
     archiveBaseName.set('convertanumbertoalengthstring')
     archiveVersion.set(version)
-    from(sourceSets.main.output.classesDirs) {
+    from(sourceSets.main.java.outputDir) {
         include '**/*.class'
-        includeEmptyDirs = false
     }
 }
+
 
 tasks.register('kotlinAndroidJar', Jar) {
     dependsOn 'compileKotlin'
     archiveBaseName.set('convertanumbertoalengthstring-kotlin-android')
     archiveVersion.set(version)
-    from(sourceSets.main.output.classesDirs) {
+    from(sourceSets.main.kotlin.output) {
         include '**/*.class'
-        includeEmptyDirs = false
     }
 }
