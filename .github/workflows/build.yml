@@ -43,10 +43,10 @@ jobs:
           fi
 
       - name: Build Java JAR
-        run: gradle clean javaJar --no-build-cache 
+        run: gradle javaJar
 
       - name: Build Kotlin/Android JAR
-        run: gradle clean kotlinAndroidJar --no-build-cache 
+        run: gradle kotlinAndroidJar
         
         
 
